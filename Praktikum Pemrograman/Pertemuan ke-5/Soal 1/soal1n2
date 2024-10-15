@@ -1,0 +1,53 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main(){
+    int n, i, j, k, temp, num, input;
+    vector<string> number;
+    vector<int> arr;
+    string data;
+
+    cout<<"Masukkan program yang ingin dijalankan (input dalam bentuk angka)\n" "1. FizzBuzz\n" "2. Reverse\n";
+    cin>>input;
+
+    if(input==1){
+        for (i=1; i<=100; i++){
+        if (i%15==0){
+            data="FizzBuzz";
+        }
+        else if (i%5==0){
+            data="Buzz";
+        }
+        else if (i%3==0){
+            data="Fizz";
+        }
+        else {
+            data=to_string(i);
+        }
+        number.push_back(data);
+        }
+        for (j=0; j<=99; j++){
+            cout<<number[j]<<" ";
+        }
+    }
+    else {
+        cout<<"Masukkan banyak nilai array :"<<endl;
+        cin>>n;
+        cout<<"Masukkan nilai array :"<<endl;
+        for (int i=0; i<n; i++){
+            cin>>num;
+            arr.push_back(num);
+        }
+        for (j=0, k=n-1; j<k; j++, k--){
+            swap(arr[j],arr[k]);
+        }
+        for(int ind : arr){
+            cout<<ind<<" ";
+        }
+
+    }
+
+    return 0;
+}
